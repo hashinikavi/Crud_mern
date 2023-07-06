@@ -1,9 +1,13 @@
 const express = require('express');
+const mongoose = require('mongoose');
 
 const app = express();
 
-const port = 8000;
+const PORT = 8000;
+const DB_URL = 'mongodb+srv://hashinik:Sandini123/@cluster0.zi2sjzo.mongodb.net/mernCrud?retryWrites=true&w=majority' //check whether the db name is necessary or not.
 
-app.listen(port, () => {
-    console.log(`App is running on ${port}`)
+mongoose.connect(DB_URL)
+
+app.listen(PORT, () => {
+    console.log(`App is running on ${PORT}`)
 });
