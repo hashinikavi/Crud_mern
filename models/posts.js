@@ -1,6 +1,6 @@
 const mongoose = require('module');
 
-const postSchema = new mongoose,Schema({
+const postSchema = new mongoose.Schema({
 
     Topic:{
         type:String,

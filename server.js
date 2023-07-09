@@ -1,7 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const app = express();
+
+//import routes
+const postRoutes = reqyire('./routes/posts');
+
+//app middleware
+app.use(bodyParser.jason());
 
 const PORT = 8000;
 const DB_URL = 'mongodb+srv://hashinik:Sandini123@cluster0.zi2sjzo.mongodb.net/retryWrites=true&w=majority' //check whether the db name is necessary or not.
