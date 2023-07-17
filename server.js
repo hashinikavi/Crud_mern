@@ -5,10 +5,12 @@ const bodyParser = require('body-parser');
 const app = express();
 
 //import routes
-const postRoutes = reqyire('./routes/posts');
+const postRoutes = require('./routes/posts');
 
 //app middleware
-app.use(bodyParser.jason());
+app.use(bodyParser.json());
+
+app.use(postRoutes);
 
 const PORT = 8000;
 const DB_URL = 'mongodb+srv://hashinik:Sandini123@cluster0.zi2sjzo.mongodb.net/retryWrites=true&w=majority' //check whether the db name is necessary or not.
