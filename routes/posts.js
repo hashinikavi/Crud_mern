@@ -41,7 +41,7 @@ router.get('/posts', (req,res) =>{
     })
 });
 
-//update posts
+//update posts need to change
 
 router.put('/post/update/:id', (req,res) =>{
     Posts.findByIdAndUpdate(
