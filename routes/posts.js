@@ -62,16 +62,22 @@ router.put('/post/update/:id', (req,res) =>{
 
 //delete post
 
-router.delete('/post/delete/:id',(req,res) =>{
-    Posts.findByIdAndRemove(req.params.id).exec((err,deletePost) =>{
-        if(err) return res.status(400).json({
-            message:"Delete unsuccesful",err
-        });
-
-        return re.json({
-            message:"Delete successful", deletePost
+router.delete('/post/delete/:id', (req, res) => {
+    Posts.findByIdAndRemove(req.params.id)
+        .then(deletePost => {
+            return res.json({
+                message: "Delete successful",
+                deletePost
+            });
         })
-    })
-})
+        .catch(err => {
+            return res.status(400).json({
+                message: "Delete unsuccessful",
+                err
+            });
+        });
+});
+
 
 module.exports = router;
+
